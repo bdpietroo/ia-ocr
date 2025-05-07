@@ -47,6 +47,42 @@ export default function FaturasPage() {
         });
     };
 
+    const downloadPdf = async (id, filename) => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            setError('Você precisa estar autenticado para baixar o PDF.');
+            return;
+        }
+    
+        try {
+            const response = await axios.get(`http://localhost:4000/api/download/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                responseType: 'blob',
+            });
+    
+            // Cria um URL temporário para o blob
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            
+            // Cria um link temporário e dispara o download
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `${filename.replace(/\.[^/.]+$/, '')}.pdf`);
+            document.body.appendChild(link);
+            link.click();
+            
+            // Limpa o URL e remove o elemento
+            setTimeout(() => {
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(link);
+            }, 100);
+        } catch (err) {
+            setError(err.response?.data?.message || 'Erro ao baixar o PDF.');
+            console.error('Erro no download:', err);
+        }
+    };
+
     return (
         <div style={{ padding: '20px', maxWidth: '900px', margin: '0 auto' }}>
             <h1 style={{ textAlign: 'center' }}>Todas as Faturas</h1>
@@ -86,6 +122,20 @@ export default function FaturasPage() {
                         }}>
                             {formatText(fatura.explanation)}
                         </div>
+                        <button
+                            onClick={() => downloadPdf(fatura.id, fatura.filename)}
+                            style={{
+                                marginTop: '10px',
+                                padding: '8px 12px',
+                                backgroundColor: '#3498db',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                            }}
+                            >
+                            Baixar PDF
+                            </button>
                     </div>
                 </div>
             ))}
