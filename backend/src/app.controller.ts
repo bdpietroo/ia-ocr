@@ -1,5 +1,5 @@
 import {
-  Controller, FileTypeValidator, HttpCode, HttpStatus, MaxFileSizeValidator, ParseFilePipe, Get, Post, UploadedFile, UseInterceptors, UseGuards, Request, Param, Res,
+  Controller, HttpCode, HttpStatus, Get, Post, UploadedFile, UseInterceptors, UseGuards, Request, Param, Res,
  } from '@nestjs/common';
 import { AppService } from './app.service';
 import { FileInterceptor } from '@nestjs/platform-express';
