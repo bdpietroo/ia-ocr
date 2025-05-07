@@ -1,0 +1,98 @@
+# Compiled output
+/dist
+/build
+/.next
+/out
+
+# Dependencies
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Tests
+/coverage
+/.nyc_output
+/junit.xml
+/test-results.xml
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.code-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Temp directories
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Build artifacts
+*.tsbuildinfo
+
+# Prisma
+/prisma/migrations/dev.db
+/prisma/dev.db-journal
+
+# Puppeteer
+/puppeteer/
+.puppeteer/
+
+# Multer uploads
+/uploads/
+
+# Frontend-specific
+/frontend/.next
+/frontend/out
+/frontend/node_modules
+
+# Backend-specific
+/backend/dist
+/backend/node_modules
+/backend/coverage
+/backend/.env
+/backend/.env.local
+/backend/.env.development.local
+/backend/.env.test.local
+/backend/.env.production.local
+
+# Ignore traineddata files
+/backend/*.traineddata
