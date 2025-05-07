@@ -16,7 +16,8 @@ export default function FaturasPage() {
 
             setLoading(true);
             try {
-                const res = await axios.get('http://localhost:4000/api/me/documents', {
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+                const res = await axios.get(`${apiUrl}/api/me/documents`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -55,7 +56,8 @@ export default function FaturasPage() {
         }
     
         try {
-            const response = await axios.get(`http://localhost:4000/api/download/${id}`, {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+            const response = await axios.get(`${apiUrl}/api/download/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
