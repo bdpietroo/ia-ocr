@@ -28,19 +28,22 @@ DATABASE_URL=postgresql://usuario:@localhost:5432/nome_do_banco
 JWT_SECRET=sua_chave_secreta
 
 3. Instale as dependências do backend:
-
-cd backend
-npm install
+   
+   ```bash
+   cd backend
+   npm install
 
 4. Instale as dependências do frontend:
-
-cd ../frontend
-npm install
+   
+   ```bash
+   cd ../frontend
+   npm install
 
 5. Execute as migrações do banco de dados: 
 
-cd ../backend
-npx prisma migrate dev
+   ```bash
+   cd ../backend
+   npx prisma migrate dev
 
 6. Configure os arquivos .traineddata para o OCR:
 
@@ -51,18 +54,20 @@ npx prisma migrate dev
 Backend 
 
 1. Inicie o servidor do backend:
-
-cd backend
-npm run start:dev
+   
+   ```bash
+   cd backend
+   npm run start:dev
 
 - O backend estará disponível em http://localhost:4000.
 
 Frontend
 
 1. Inicie o servidor do frontend:
-
-cd frontend
-npm run dev
+   
+   ```bash
+   cd frontend
+   npm run dev
 
 - O frontend estará disponível em http://localhost:3000.
 
