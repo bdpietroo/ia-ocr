@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
+
 
 export default function UploadPage() {
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
+    const router = useRouter();
+
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
@@ -111,6 +115,22 @@ export default function UploadPage() {
                     }}
                 >
                     {loading ? 'Enviando...' : 'Enviar'}
+                </button>
+
+                <button 
+                    type="button"
+                    onClick={() => router.push('/faturas')}
+                    style={{
+                        padding: '10px 15px',
+                        backgroundColor: '#2ecc71',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: '16px'
+                    }}
+                >
+                    Todas as faturas
                 </button>
             </form>
 
