@@ -18,6 +18,12 @@ export default function UploadPage() {
             return;
         };
 
+        const token = localStorage.getItem('token');
+        if (!token) {
+            setError('Você precisa estar autenticado para enviar arquivos.');
+            return;
+        }
+
         setLoading(true);
         setError(null);
         setResponse(null);
