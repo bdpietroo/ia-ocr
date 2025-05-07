@@ -9,7 +9,7 @@ Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 - Node.js (versão 16 ou superior)
 - npm ou yarn
 - PostgreSQL (para o banco de dados)
-- Ollama (Inteligência Artifical usada)
+- Ollama (Inteligência Artificial usada)
 
 ## Configuração do Ambiente
 
