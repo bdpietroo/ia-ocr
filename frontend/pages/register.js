@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ export default function RegisterPage() {
 
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-      const response = await axios.post(`${apiUrl}/auth/register`, {
+    await axios.post(`${apiUrl}/auth/register`, {
         email,
         password,
       });
@@ -105,8 +106,8 @@ export default function RegisterPage() {
                     marginTop: '10px',
                     transition: 'background-color 0.3s'
                 }}
-                onMouseOver={(e) => e.target.style.backgroundColor = '#2980b9'}
-                onMouseOut={(e) => e.target.style.backgroundColor = '#3498db'}
+                onMouseOver={(event) => event.target.style.backgroundColor = '#2980b9'}
+                onMouseOut={(event) => event.target.style.backgroundColor = '#3498db'}
             >
                 Registrar
             </button>
@@ -148,8 +149,9 @@ export default function RegisterPage() {
         }}>
             <p style={{ color: '#7f8c8d' }}>
                 Já tem uma conta?{' '}
-                <a 
-                    href="/login" 
+                
+                <Link 
+                    href="/login"
                     style={{ 
                         color: '#3498db', 
                         textDecoration: 'none',
@@ -157,7 +159,7 @@ export default function RegisterPage() {
                     }}
                 >
                     Fazer login
-                </a>
+                </Link>
             </p>
         </div>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
@@ -135,7 +136,8 @@ return (
         }}>
             <p style={{ color: '#7f8c8d' }}>
                 Não possui uma conta?{' '}
-                <a 
+                
+                <Link 
                     href="/register" 
                     style={{ 
                         color: '#3498db', 
@@ -144,7 +146,7 @@ return (
                     }}
                 >
                     Criar conta
-                </a>
+                </Link>
             </p>
         </div>
     </div>
