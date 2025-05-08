@@ -60,7 +60,7 @@ export default function UploadPage() {
         if (typeof text === 'object' && text !== null) {
             try {
                 text = JSON.stringify(text);
-            } catch (e) {
+            } catch {
                 text = String(text);
             }
         }
