@@ -37,10 +37,10 @@ export default function UploadPage() {
 
         try {
             const apiUrl = process.env.NEXT_PUBLIC_API_URL
-            const token = localStorage.getItem('token'); // Obtenha o token JWT do localStorage
+            const token = localStorage.getItem('token'); // Obtenha o token JWT do localStorage.
             const res = await axios.post(`${apiUrl}/api/upload`, formData, {
                 headers: {
-                    Authorization: `Bearer ${token}`, // Envia o token no cabeçalho
+                    Authorization: `Bearer ${token}`, // Envia o token no cabeçalho.
                     'Content-Type': 'multipart/form-data',
                 },
             });
