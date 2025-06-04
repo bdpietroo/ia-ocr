@@ -1,4 +1,4 @@
-﻿# Paggo OCR
+﻿# IA OCR
 
 Este é um projeto que utiliza OCR (Reconhecimento Óptico de Caracteres) para processar documentos enviados pelos usuários e gerar explicações contextuais utilizando IA. O projeto é dividido em duas partes: o backend (NestJS) e o frontend (Next.js).
 
@@ -16,8 +16,8 @@ Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/bdpietroo/paggo-ocr.git
-   cd paggo-ocr
+   git clone https://github.com/bdpietroo/ia-ocr.git
+   cd ia-ocr
 
 2. Configure o banco de dados PostgreSQL:
 
